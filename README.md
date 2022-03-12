@@ -1,4 +1,9 @@
 # wikiepedia_project
+#all testcases written for task1 and task2 are located at following location
+```
+docs/testcases/testcases.txt
+```
+
 #Prerequisite 
 For Python to use the webdriver , in this case it’s Chrome
 We should install Chrome webdriver
