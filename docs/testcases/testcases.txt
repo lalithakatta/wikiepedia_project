@@ -1,0 +1,101 @@
+Task1 :
+Please go to https://en.wikipedia.org/w/index.php?search and do some
+exploratory testing.
+● At the end of your test please create a brief Exploratory Test Charter.
+● Remember that a comprehensive test is not only about functionality.
+● Feel free to advise on the possible improvements, not just the bugs.
+
+Answer [LK]
+
+Note : Considering the page can consist of a vast number of scenarios to test exploratively and depending upon the time frame i came up with below scenarios . They are complete Test Charter but we can consider a part of them
+
+Scenario  1:
+Check https://en.wikipedia.org/w/index.php? Web URL is loaded and search Button,
+Along with search input field box is available.
+Check that all contents in the page are loaded, there are no chopped images, disrupted content or junk text .
+Scenario 2 :
+Try to create an account by clicking on the create account button which exists on the right top corner
+It’s observed that when we have multiple exceptions while creating an account , like passwords mismatch , captcha text is not entered properly , provided  username which is already been taken then in that case already taken username validation is coming last .It ‘s also observed that there “s a message being displayed at the top that there is some problem with the data and below to the username field it shows the username is taken ..and this is your suggested name.
+
+In my opinion displaying text is fine but we should highlight the text field, and in the message suggested alternatives also should get displayed so that user has a chance to see the alternatives.
+
+
+
+Scenario 3:
+
+What’s the purpose of Not logged In? In my opinion we should have Login or Create Account. Not logged in is implicit when the user has the LogIn option enabled.
+
+Scenario 4:
+
+User created account successfully .
+After logging in when a user wants to create some content then it’s being rerouted to a different page ? Is this expected?
+
+
+Scenario 5 :
+
+Try to enter some search string in the text box like “Pandemic”
+Verify the elastic search results , Here it displays instead of Pandemic only “endemic”
+
+ Try to repeat this search for some known and popular words which are obvious and verify the search results.
+
+Scenario 6 :
+Clear all search fields
+Click on advanced search
+Check the seggreations are available as expected.
+Try to search for some combinations suppose here i have given File type as gif and File width value is in between some pixel range
+Without entering the search string click on search and see what is going to happen ???
+If I search without search string then no error displays , instead of that it displays some random value
+Also once search is over the values are not getting reset
+They are still applying to all search items by default .
+
+Scenario 7 :
+
+Though I have not clicked on remember future selection option , search selections are being cached and being carry forwarded to all future searches
+Scenario 8 :
+Check that when we select different forums  in search in options like talk, discussions, default etc.. validate thre results contain the selected medium prefix for example like below .
+Talk:Gadget Boy & Heather
+
+Scenerio 9 :
+
+When clicking on empty search input field, no info message being shown that enter input or input is empty ..is this expected ??
+
+
+
+Task 2:
+Task 2
+
+Please submit 2 UI automation scenarios of your choice using the previous website https://en.wikipedia.org/w/index.php?search
+
+Please describe your scenarios and why you chose to implement them, and then walk us through how you implemented them.
+
+Answer [LK] :
+I have chosen to automate the following two User scenarios because I found them important  for a search engine like wikipedia, the most important thing any of the users would like to have them asa basic features from UI perspective.
+
+Prerequisite :
+For Python to use the webdriver , in this case it’s Chrome
+We should install Chrome webdriver
+This can be done in many ways but I have chosen a way to install using .chocolatey.
+choco install chromedriver
+Note : You should install chocolatey before you use it’s libraries.
+
+Scenario 1 : Check page is loaded , assert the returned URL
+
+Navigate to the page URL
+Check page is Loaded
+Get the title of the current page URL
+Assert that it matches to the expected title
+
+Scenario 2: Give some input names in the search field, click on the search input URL, check paragraph text is available, if yes return and store them to a file
+
+Navigate to the search Page
+Check the search option is available
+Create a function which reads the source input file, consisting of the names to be searched for
+Check that search function returns the names as list
+Provide these names list as an input to another function
+Loop through all the names which exist in the list
+Click on the link containing the name
+Once link is opened get the first paragraph text if the length of element is greater than 1
+Returned text is written to a response .txt file
+This loop will get looped through all the variables in the source input file names.
+
+This code is written in PYTHON .
